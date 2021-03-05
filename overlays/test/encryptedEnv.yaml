@@ -3,13 +3,13 @@ kind: Deployment
 metadata:
     name: test-http
 spec:
-    template:
-        spec:
-            containers:
-            -   name: httpbin
-                env:
-                -   name: SUPER_SECRET
-                    value: ENC[AES256_GCM,data:bZ7LJu3mfHzfI2VaQDKun4LEWx+lgA==,iv:FGa1HOgJLgXm7gOaPT7sUmYBUhr2HiKC4M3g60vkKa8=,tag:RHUXhBrlNIcLjg39w3N5Og==,type:str]
+  template:
+    spec:
+      containers:
+      - name: httpbin
+        env:
+        - name: SUPER_SECRET
+          value: ENC[AES256_GCM,data:bZ7LJu3mfHzfI2VaQDKun4LEWx+lgA==,iv:FGa1HOgJLgXm7gOaPT7sUmYBUhr2HiKC4M3g60vkKa8=,tag:RHUXhBrlNIcLjg39w3N5Og==,type:str]
 sops:
     kms: []
     gcp_kms: []
