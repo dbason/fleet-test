@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-http
+  labels:
+    app: test-http
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-http
+  template:
+    metadata:
+      labels:
+        app: test-http
+    spec:
+      containers:
+      - name: httpbin
+        image: kennethreitz/httpbin
+        env:
+        - name: SUPER_SECRET
+          value: {{ .Values.superSecret }}
+        ports:
+        - containerPort: 80
+          protocol: TCP
+          name: http
