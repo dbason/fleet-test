@@ -1,2 +1,8 @@
+stages:
+- name: Echo
+  steps:
+  - runScriptConfig:
+      image: python:latest
+      shellScript: echo "hello"
 timeout: 60
 notification: {}
