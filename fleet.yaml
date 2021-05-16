@@ -1,5 +1,33 @@
 defaultNamespace: default
 helm:
-    chart: gatekeeper
-    repo: https://open-policy-agent.github.io/gatekeeper/charts
-    version: 3.4.0
+  chart: gatekeeper
+  repo: https://open-policy-agent.github.io/gatekeeper/charts
+  version: 3.4.0
+diff:
+  comparePatches:
+  - apiVersion: admissionregistration.k8s.io/v1beta
+    kind: ValidatingWebhookConfiguration
+    name: gatekeeper-validating-webhook-configuration
+    jsonPointers:
+    - /webhooks/0/admissionReviewVersions
+    - /webhooks/0/clientConfig/caBundle
+    - /webhooks/0/clientConfig/service
+    - /webhooks/0/failurePolicy
+    - /webhooks/0/matchPolicy
+    - /webhooks/0/name
+    - /webhooks/0/namespaceSelector/matchExpressions
+    - /webhooks/0/objectSelector
+    - /webhooks/0/rules
+    - /webhooks/0/sideEffects
+    - /webhoks/0/timeoutSeconds
+    - /webhooks/1/admissionReviewVersions
+    - /webhooks/1/clientConfig/caBundle
+    - /webhooks/1/clientConfig/service
+    - /webhooks/1/failurePolicy
+    - /webhooks/1/matchPolicy
+    - /webhooks/1/name
+    - /webhooks/1/namespaceSelector/matchExpressions
+    - /webhooks/1/objectSelector
+    - /webhooks/1/rules
+    - /webhooks/1/sideEffects
+    - /webhoks/1/timeoutSeconds
