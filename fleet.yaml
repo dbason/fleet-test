@@ -1,5 +1,5 @@
 defaultNamespace: default
 helm:
-    chart: test-chart
-    repo: https://harbor-core.danbason.dev/chartrepo/danb-test
-    version: 0.1.1
+    chart: gatekeeper
+    repo: https://open-policy-agent.github.io/gatekeeper/charts
+    version: 3.4.0
